@@ -9053,11 +9053,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6057978083393904193, guid: bf3add79119c1a9408477ecc73d28ae8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.85
+      value: -0.52
       objectReference: {fileID: 0}
     - target: {fileID: 6057978083393904193, guid: bf3add79119c1a9408477ecc73d28ae8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.15
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 6057978083393904193, guid: bf3add79119c1a9408477ecc73d28ae8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9092,8 +9092,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6562016077393719479, guid: bf3add79119c1a9408477ecc73d28ae8, type: 3}
+      propertyPath: jumpSpeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562016077393719479, guid: bf3add79119c1a9408477ecc73d28ae8, type: 3}
       propertyPath: moveSpeed
-      value: 14.5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185367680542015341, guid: bf3add79119c1a9408477ecc73d28ae8, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185367680542015341, guid: bf3add79119c1a9408477ecc73d28ae8, type: 3}
+      propertyPath: m_GravityScale
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185367680542015341, guid: bf3add79119c1a9408477ecc73d28ae8, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
