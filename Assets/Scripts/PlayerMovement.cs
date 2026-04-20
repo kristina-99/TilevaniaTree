@@ -4,8 +4,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
 
-    [SerializeField]float jumpSpeed = 5.0f;
+    [SerializeField] float jumpSpeed = 5.0f;
     [SerializeField] float moveSpeed = 10f;
+    [SerializeField] float climbSpeed = 5f;
 
     Vector2 moveInput;
     Rigidbody2D myRigidBody;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         FlipSprite();
+        ClimbLadder();
         bool hasHorizontalSpeed = Mathf.Abs(myRigidBody.linearVelocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("isRunning", hasHorizontalSpeed);
     }
@@ -50,6 +52,13 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, myRigidBody.linearVelocity.y);
         myRigidBody.linearVelocity = playerVelocity;
+    }
+
+    void ClimbLadder()
+    {
+        if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) { return; }
+        Vector2 climbVelocity = new Vector2(myRigidBody.linearVelocity.x, moveInput.y * climbSpeed);
+        myRigidBody.linearVelocity = climbVelocity;
     }
 
     void FlipSprite()
