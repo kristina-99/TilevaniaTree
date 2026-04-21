@@ -62,12 +62,15 @@ public class PlayerMovement : MonoBehaviour
         if (!myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing"))) 
         {
             myRigidBody.gravityScale = startingGravity;
+            myAnimator.SetBool("isClimbing", false);
             return; 
         }
-
         myRigidBody.gravityScale = 0f;
         Vector2 climbVelocity = new Vector2(myRigidBody.linearVelocity.x, moveInput.y * climbSpeed);
         myRigidBody.linearVelocity = climbVelocity;
+
+        bool hasVerticalSpeed = Mathf.Abs(myRigidBody.linearVelocity.y) > Mathf.Epsilon;
+        myAnimator.SetBool("isClimbing", hasVerticalSpeed);
     }
 
     void FlipSprite()
